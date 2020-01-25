@@ -7,7 +7,7 @@ const Posts = () => {
       const user = useSelector(state => state.authReducer.user);
       return (
             <div className="row mb-2 mt-2">
-                  {posts.length > 0 && posts.map((post, index) => {
+                  {posts.length > 0 ? posts.map((post, index) => {
                         return (
                               <div key={index} className="col-md-6">
                                     <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -23,7 +23,7 @@ const Posts = () => {
                                     </div>
                               </div>
                         )
-                  })
+                  }) : <h2>No Posts Yet, please Login or register and add one</h2>
                   }
             </div>
 
